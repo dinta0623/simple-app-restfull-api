@@ -1,0 +1,4 @@
+#primary
+node_modules
+build
+.env
