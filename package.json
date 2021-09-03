@@ -8,8 +8,8 @@
   "scripts": {
     "serve": "ts-node-dev ./index.ts",
     "dev": "cross-env NODE_ENV=development nodemon -x ts-node src/server.ts",
-    "build": "cross-env NODE_ENV=production rm -rf build && tsc",
-    "start": "cross-env NODE_ENV=production node build/server.js"
+    "build": "rm -rf build && tsc",
+    "start": "cross-env NODE_ENV=production rm -rf build && tsc && node build/server.js"
   },
   "dependencies": {
     "body-parser": "^1.19.0",
