@@ -2,7 +2,7 @@
  * @import module
  */
 import express from 'express'
-import morgan from "morgan"
+
 import cors from 'cors'
 /**
  * @import stuff
@@ -27,7 +27,8 @@ class App {
     init() {
         mongodb.connect()
         if (config.server.mode == "development") {
-            this.app.use(morgan('dev'))
+            const morgan = require("morgan")
+            this.app.use(() => morgan('dev'))
         }
         this.app.use(cors({
             origin: config.server.proxy,
